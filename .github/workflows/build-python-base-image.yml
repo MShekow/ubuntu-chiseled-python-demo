@@ -9,10 +9,10 @@
 name: Build Chiseled Python Base Image
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+#  push:
+#    branches: [ main ]
+#  pull_request:
+#    branches: [ main ]
   workflow_dispatch:
   schedule:
     - cron: '0 9 * * *'  # Run every day at 9 AM UTC
