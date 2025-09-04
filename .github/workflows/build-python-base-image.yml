@@ -45,7 +45,7 @@ jobs:
           tags: localbuild
 
       - name: Setup go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: 'stable'
       - name: Setup crane
