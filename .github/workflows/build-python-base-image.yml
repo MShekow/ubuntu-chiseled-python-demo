@@ -27,7 +27,7 @@ jobs:
       IMAGE_TAG: ghcr.io/mshekow/python:3.12-chiseled
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
