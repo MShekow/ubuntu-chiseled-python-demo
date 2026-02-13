@@ -49,7 +49,7 @@ jobs:
         with:
           go-version: 'stable'
       - name: Setup crane
-        uses: imjasonh/setup-crane@v0.4
+        uses: imjasonh/setup-crane@v0.5
 
       - name: Extract build info of local build
         run: |
