@@ -11,7 +11,7 @@
   "automerge": true,
   "packageRules": [
     {
-      "description": "Do not auto-merge upstream Python updates (we want to stay on 3.12.x)",
+      "description": "Do not auto-merge upstream Python updates (we want to stay on 3.14.x)",
       "matchPackageNames": ["python"],
       "matchManagers": ["dockerfile"],
       "automerge": false
