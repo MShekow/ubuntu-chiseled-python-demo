@@ -16,9 +16,9 @@ COPY gunicorn.conf.py .
 # and create a new one to the correct Python binary.
 RUN rm .venv/bin/python && ln -s /usr/bin/python3 .venv/bin/python
 
-# Whenever a new build of the ghcr.io/mshekow/python:3.12-chiseled image is available, a tool like Renovate Bot
+# Whenever a new build of the ghcr.io/mshekow/python:3.14-chiseled image is available, a tool like Renovate Bot
 # can update the sha256 digest
-FROM ghcr.io/mshekow/python:3.12-chiseled@sha256:941d75d2565cce5b130fbe9f9f3a444f5b79e235fa1ef27628a80dea93fd742b AS final
+FROM ghcr.io/mshekow/python:3.14-chiseled@sha256:d8b57aaf85b31bcc0204282515f4dfe465afd3a1bf757f452cc775fc766228d7 AS final
 ARG VIRTUAL_ENV
 WORKDIR /app
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
