@@ -2,7 +2,7 @@
 
 This repository demonstrates how to build a minimal Flask-based Python application using a self-built Ubuntu **Chiseled** Python image.
 
-This repo creates a daily re-build of the Python3.12 Chiseled base image (see [workflow](.github/workflows/build-python-base-image.yml)), and pushes it in case the contained packages were changed.
+This repo creates a daily re-build of the Python3.14 Chiseled base image (see [workflow](.github/workflows/build-python-base-image.yml)), and pushes it in case the contained packages were changed.
 
 The [Dockerfile](Dockerfile) demonstrates how to use a multi-stage build and make corrections for the Python interpreter path.
 
