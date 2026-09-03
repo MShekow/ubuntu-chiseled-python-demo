@@ -1,10 +1,12 @@
 ARG UBUNTU_RELEASE=26.04
 ARG CHISEL_VERSION=v1.4.2
+ARG ROCKS_TOOLBOX_VERSION=v1.2.0
 
 FROM ubuntu:$UBUNTU_RELEASE AS builder
 ARG TARGETARCH
 ARG UBUNTU_RELEASE
 ARG CHISEL_VERSION
+ARG ROCKS_TOOLBOX_VERSION
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 
 RUN apt-get update \
@@ -16,7 +18,7 @@ ADD "https://github.com/canonical/chisel/releases/download/${CHISEL_VERSION}/chi
 RUN tar -xvf chisel.tar.gz -C /usr/bin/
 
 RUN apt-get install -y git file  # file is needed by the chisel-wrapper script
-RUN git clone --depth 1 -b main https://github.com/canonical/rocks-toolbox /rocks-toolbox && mv /rocks-toolbox/chisel-wrapper /usr/local/bin/ && rm -rf /rocks-toolbox
+RUN git clone --depth 1 -b "$ROCKS_TOOLBOX_VERSION" https://github.com/canonical/rocks-toolbox /rocks-toolbox && mv /rocks-toolbox/chisel-wrapper /usr/local/bin/ && rm -rf /rocks-toolbox
 RUN mkdir -p /staging-rootfs/var/lib/dpkg
 
 RUN chisel-wrapper --generate-dpkg-status /staging-rootfs/var/lib/dpkg/status -- --release "ubuntu-$UBUNTU_RELEASE" --root /staging-rootfs \
