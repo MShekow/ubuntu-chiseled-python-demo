@@ -18,7 +18,7 @@ RUN rm .venv/bin/python && ln -s /usr/bin/python3 .venv/bin/python
 
 # Whenever a new build of the ghcr.io/mshekow/python:3.14-chiseled image is available, a tool like Renovate Bot
 # can update the sha256 digest
-FROM ghcr.io/mshekow/python:3.14-chiseled@sha256:916be0dcaf66bb4aff792b1ae7dbdb67c3ec77b399d0c316260d77a0c7a63e1a AS final
+FROM ghcr.io/mshekow/python:3.14-chiseled@sha256:5e399b22b6f32cb99642a7494071841def5221ffed67df40e6ea40c19d30f16a AS final
 ARG VIRTUAL_ENV
 WORKDIR /app
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
